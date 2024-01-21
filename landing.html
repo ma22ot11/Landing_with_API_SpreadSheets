@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" 
+        content="whidth=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Landing page</title>
+
+    <!-- Send info to Sheet -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script>
+        function submitForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/YxcVy83yXWFjsYwK/',
+                type: 'post',
+                data: $('#myForm').serializeArray(),
+                success: function() {
+                    alert('Данные успешно обработаны. Скоро мы с вами свяжемся.');
+                    $('#myForm').trigger('reset');
+                },
+                error: function() {
+                        alert('Произошла ошибка. Повторите еще раз');
+                },
+            });
+        }
+    </script>
+    <!-- -->
+</head>
+
+<body>
+    <header>
+        <div class="container"> 
+            <nav class="navbar"> 
+                <img src="images/logo.png" alt="Logo">
+                <div class="menu"> 
+                    <a href="https://nis.edu.kz/ru/o-nas">О нас</a>
+                    <a href="https://nis.edu.kz/ru/pravila-otbora">Поступление</a>
+                    <a href="https://nis.edu.kz/ru/pravila">Ученикам</a>
+                    <a href="https://nis.edu.kz/ru/roditeluniver">Родителям</a>
+                    <a href="https://nis.edu.kz/ru/novosti">Новости</a>
+                    <a href="https://nis.edu.kz/ru/pravila-zakupok">Закупки</a>
+                </div>
+                <i class="fa-solid fa-bars"></i>
+            </nav>
+       
+            <h1>
+                Подготовим вашего ребёнка </br> к поступлению в НИШ </br>
+                <span>
+                обучая 180 минут в </br> день, 3 раза в </br> неделю
+                </span> 
+            </h1>
+        </div>
+        <img src="images/headermain.png" class="img-header" alt="Image with children">
+        <img src="images/background.svg" class="img-bg" alt="Background">
+    </header>
+    
+    <section class="advantages">
+        <div class="container"> 
+            <h2>Почему родители выбирают НИШ?</h2>
+            
+        <div class="d-flex align-items-center jc-space-between advantage-card-list"> 
+            <div class="advantage-card">
+                Государство выделяет </br> 1 800 000₸ в год на </br> одного ученика НИШ
+            </div>
+            <div class="advantage-card">
+                Обучение проходит на </br> 3-х языках с учителями </br> со всего мира
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center jc-space-between advantage-card-list"> 
+            <div class="advantage-card">
+                НИШ развивает лидерство, </br> ораторское искусство и </br> критическое мышление
+            </div>
+            <div class="advantage-card">
+                Второй иностранный язык </br> на выбор: испанский, корейский, китайский, </br> французкий и др.
+            </div>        
+        </div>
+
+        <div class="d-flex align-items-center jc-space-between advantage-card-list" > 
+            <div class="advantage-card">
+                Выпускники НИШ могут </br> поступать в ВУЗы без </br> сдачи ЕНТ и без </br> Foundation
+            </div>
+            <div class="advantage-card">
+                НИШ за свой счет проводит </br> международные экзамены </br> для поступления в </br> зарубежные ВУЗы
+            </div>
+        </div>
+    </div>
+    <img src="images/advantages.png" class="img-advantage" alt="" />
+</section>
+
+<section class="bg-green">
+    <div class="container">
+        <h2>Запишитесь на СУПЕР УРОК</h2>
+        <div class="contact-form">
+            <span class="sub-title">
+                Мы проверим уровень знаний вашего ребенка и 
+                оценим шансы на поступление в НИШ
+            </span>
+        
+            <form id="myForm" action="" onsubmit="event.preventDefault()">
+                <input type="text" name="Name" placeholder="Напишите ваше имя" />
+                <input type="tel" name="PhoneNumber" placeholder="Напишите ваш номер телефона" />
+                <input type="submit" onclick="submitForm()" value="Записаться" />
+            </form>
+        </div>
+        <img src="images/contact_us.png" class="img-contactUs" alt="" />
+        <img src="images/contactUsBg.png" class="img-contactUs-bg" alt="" />
+    </div>
+</section>
+
+<footer class="bg-green">
+    <div class="container d-flex">
+        <div class="w-50 d-flex align-items-center jc-space-between">
+            <div class="">
+                <div class="sm-links">
+                    <a href="" class="fa-brands fa-whatsapp"></a>
+                    <a href="" class="fa-brands fa-youtube"></a>
+                    <a href="" class="fa-brands fa-instagram"></a>
+                    <a href="" class="fa-solid fa-phone"></a>
+                </div>
+                <p>
+                    г. Астана, ул. Хусейн бен Талала, 21/1 </br>
+                    Телефон горячей линии: 8 800 080 00 95 </br>
+                    info@nis.edu.kz
+                    www.nis.edu.kz
+                </br></br>
+                    © 2015-2022 nis.kz
+                </p>
+            </div>
+            <img src="images/footerMain.png" class="img-footer" alt="Logo_AIPLUS">
+        </div>
+        <div class="w-50">
+                <p>
+                    Оставляя данные на этом сайте вы соглашаетесь на обработку 
+                    персональных данных согласно политике конфиденциальности в 
+                    соответствии с подпунктом 7 пункта 1 статьи 27-1 Закона Республики 
+                    Казахстан от 21 мая 2013 года "О персональных данных и их защите"
+                </p>
+                <a href="">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
